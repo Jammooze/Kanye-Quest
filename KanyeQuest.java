@@ -1,4 +1,3 @@
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -6,10 +5,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class KanyeQuest {
+    final static Scanner _scanner = new Scanner(System.in);
 
     public static void gameOver(){
-        Scanner input = new Scanner(System.in);
-
         System.out.println("");
         System.out.println("   +-----------+");
         System.out.println("   | GAME OVER |");
@@ -18,17 +16,18 @@ public class KanyeQuest {
         System.out.print("> PLAY AGAIN? [Y] [N]: ");
         
         char retryGame;
-        retryGame = input.next().charAt(0);
+        retryGame = _scanner.next().charAt(0);
 
         do{
             if (retryGame == 'y'){
                 main(new String[0]);
             } else if (retryGame == 'n'){
+                _scanner.close();
                 System.exit(0);
             } else {
                 System.out.println("> INVALID RESPONSE TRY AGAIN");
                 System.out.print("< PLAY AGAIN? [Y] [N]: ");
-                retryGame = input.next().charAt(0);
+                retryGame = _scanner.next().charAt(0);
             }
         } while (retryGame != 'y' || retryGame != 'n');
 
@@ -36,12 +35,11 @@ public class KanyeQuest {
 
     // Prints out prompt to click enter to continue code
     public static void nextPrompt(){
-        Scanner input = new Scanner(System.in);
         String enterKey;
         System.out.print("  [PRESS ENTER TO CONTINUE]");
         System.out.println("");
 
-        enterKey = input.nextLine();
+        enterKey = _scanner.nextLine();
     }
 
     // Tic Tac Toe METHODS
@@ -60,7 +58,6 @@ public class KanyeQuest {
     }
 
     public static void placePiece(char[][] tictacBoard, int playerPosition, String user){
-
         char symbol = 'X';
         if(user.equals("player")){
             symbol = 'X';
@@ -145,11 +142,9 @@ public class KanyeQuest {
     }
 
     public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-
         if(args.length != 0) {
             if(args[0].equals("-help")) {
-                KanyeQuestHelpScreen.printHelpScreen(input);
+                KanyeQuestHelpScreen.printHelpScreen(_scanner);
             } else {
                 System.out.println("You provided Kanye with an unsupported argument!");
             }
@@ -178,7 +173,7 @@ public class KanyeQuest {
         System.out.println("                         - ZHOU ADDISON\n");
 
         System.out.print("  [PRESS ENTER TO START GAME]");
-        startKey = input.nextLine();
+        startKey = _scanner.nextLine();
         System.out.println("");
 
         System.out.println("   +---------------+");
@@ -199,7 +194,7 @@ public class KanyeQuest {
         System.out.println("");
 
         System.out.print("< ENTER NAME : ");
-        nameInput = input.next();
+        nameInput = _scanner.next();
 
         // Edits name to proper formatting
         String firstLetStr = nameInput.substring(0, 1);
@@ -220,7 +215,7 @@ public class KanyeQuest {
         System.out.print("< CHOOSE TO BEAT HIM UP? [Y] [N]:");
         char yesNo;
 
-        yesNo = input.next().charAt(0);
+        yesNo = _scanner.next().charAt(0);
 
         do {
             if (yesNo == 'y'){
@@ -253,7 +248,7 @@ public class KanyeQuest {
             } else {
                 System.out.println("> INVALID RESPONSE TRY AGAIN");
                 System.out.print("< CHOOSE TO BEAT HIM UP? [Y] [N]:");
-                yesNo = input.next().charAt(0);
+                yesNo = _scanner.next().charAt(0);
             }
         } while (yesNo != 'y' || yesNo != 'n');
 
@@ -416,7 +411,7 @@ public class KanyeQuest {
         System.out.print("< WILL YOU STOP YE? [Y] [N]:");
 
         char challengeAccept;
-        challengeAccept = input.next().charAt(0);
+        challengeAccept = _scanner.next().charAt(0);
 
         do{
             if (challengeAccept == 'y') {
@@ -456,7 +451,7 @@ public class KanyeQuest {
             } else {
                 System.out.println("> INVALID RESPONSE TRY AGAIN");
                 System.out.print("< WILL YOU ACCEPT TO CHALLENGE YE? [Y] [N]:");
-                challengeAccept = input.next().charAt(0);
+                challengeAccept = _scanner.next().charAt(0);
             }
         } while (challengeAccept != 'y' || challengeAccept != 'n');
 
@@ -514,7 +509,7 @@ public class KanyeQuest {
             Scanner scan = new Scanner(System.in);
 
             System.out.print("\n< ENTER POSITION [1-9] : ");
-            int playerPosition = input.nextInt();
+            int playerPosition = _scanner.nextInt();
             while(playerPositions.contains(playerPosition) || cpuPositions.contains(playerPosition)){
                 System.out.println("\n< POSITION TAKEN! RETRY!");
                 playerPosition = scan.nextInt();
@@ -590,7 +585,7 @@ public class KanyeQuest {
          */
 
         char rpsSelect;
-        rpsSelect = input.next().charAt(0);
+        rpsSelect = _scanner.next().charAt(0);
 
         int handValue;
         do{
@@ -628,7 +623,7 @@ public class KanyeQuest {
                 } else {
                     System.out.println("\n> INVALID INPUT TRY AGAIN!\n");
                     System.out.print("< THROW [R] ROCK / [P] PAPER / [S] SCISSORS:");
-                    rpsSelect = input.next().charAt(0);
+                    rpsSelect = _scanner.next().charAt(0);
                 }
             } while (rpsSelect != 'r' || rpsSelect != 'p' || rpsSelect != 's');
 
@@ -755,6 +750,7 @@ public class KanyeQuest {
         System.out.println("                        - NGUYEN JAMES");
         System.out.println("                        - ZHOU ADDISON");
 
+        _scanner.close();
         System.exit(0);
     }
 
