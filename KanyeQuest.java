@@ -162,17 +162,14 @@ public class KanyeQuest {
 
                 _scanner.close();
                 System.exit(0);
-            } else if(args[0].equals("-standard")) {
-                System.out.println("YOU'RE BOOTING INTO KANYE QUEST COMING ON STEAM 2023!");
             } else {
                 System.out.println("You provided Kanye with an unsupported argument!");
                 System.exit(0);
             }
-        } else {
-            System.out.print("Please run the program with argument -help or -standard.");
-            System.exit(0);
         }
         
+        System.out.println("YOU'RE BOOTING INTO KANYE QUEST COMING ON STEAM 2023!");
+
         Random rand = new Random();
         String startKey;
 
