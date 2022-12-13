@@ -144,17 +144,38 @@ public class KanyeQuest {
     public static void main(String[] args){
         if(args.length != 0) {
             if(args[0].equals("-help")) {
-                KanyeQuestHelpScreen.printHelpScreen(_scanner);
+                System.out.println("\n            [KANYE QUEST]\n");
+                System.out.println("  A CS-2011 PROJECT BY: - CHAN GAVIN");
+                System.out.println("                        - NGUYEN JAMES");
+                System.out.println("                        - ZHOU ADDISON\n");
+                System.out.println("  KANYE QUEST IS A TEXT BASED ADVENTURE GAME");
+                System.out.println("  PROGRAMMED IN [JAVA] DESIGNED TO RUN ON THE USER'S");
+                System.out.println("  TERMINAL APPLICATION\n");
+                System.out.println("  THE MAIN OBJECTIVE IN KANYE QUEST IS TO DEFEAT THE");
+                System.out.println("  CPU PLAYING AS KANYE WEST IN A GAME OF TIC TAC TOE");
+                System.out.println("  AND ROCK PAPER SCISSORS\n");
+                System.out.println("  [PRESS ENTER TO CONTINUE] < WHEN THIS PROMPT APPEARS");
+                System.out.println("                              ON THE TERMINAL...");
+                System.out.println("   +---------+");
+                System.out.println("   |  ENTER  |  <  [PRESS ENTER ON YOUR KEYBOARD]");
+                System.out.println("   +---------+");
+
+                _scanner.close();
+                System.exit(0);
+            } else if(args[0].equals("-standard")) {
+                System.out.println("YOU'RE BOOTING INTO KANYE QUEST COMING ON STEAM 2023!");
             } else {
                 System.out.println("You provided Kanye with an unsupported argument!");
+                System.exit(0);
             }
-
+        } else {
+            System.out.print("Please run the program with arguments -help or -standard.");
             System.exit(0);
         }
         
         Random rand = new Random();
-
         String startKey;
+
         String nameInput;
 
         System.out.println("");
