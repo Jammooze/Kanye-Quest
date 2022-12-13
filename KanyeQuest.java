@@ -505,14 +505,11 @@ public class KanyeQuest {
         String result = tictactoeWin();
 
         while(true){
-
-            Scanner scan = new Scanner(System.in);
-
             System.out.print("\n< ENTER POSITION [1-9] : ");
             int playerPosition = _scanner.nextInt();
             while(playerPositions.contains(playerPosition) || cpuPositions.contains(playerPosition)){
                 System.out.println("\n< POSITION TAKEN! RETRY!");
-                playerPosition = scan.nextInt();
+                playerPosition = _scanner.nextInt();
             }
 
             placePiece(tictacBoard, playerPosition, "player");
