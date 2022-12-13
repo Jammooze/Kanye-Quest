@@ -169,7 +169,7 @@ public class KanyeQuest {
                 System.exit(0);
             }
         } else {
-            System.out.print("Please run the program with arguments -help or -standard.");
+            System.out.print("Please run the program with argument -help or -standard.");
             System.exit(0);
         }
         
