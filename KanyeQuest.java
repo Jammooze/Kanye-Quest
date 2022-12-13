@@ -22,7 +22,7 @@ public class KanyeQuest {
 
         do{
             if (retryGame == 'y'){
-                main(null);
+                main(new String[0]);
             } else if (retryGame == 'n'){
                 System.exit(0);
             } else {
