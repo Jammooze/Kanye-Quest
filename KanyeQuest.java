@@ -1,3 +1,4 @@
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -145,6 +146,17 @@ public class KanyeQuest {
 
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
+
+        if(args.length != 0) {
+            if(args[0].equals("-help")) {
+                KanyeQuestHelpScreen.printHelpScreen(input);
+            } else {
+                System.out.println("You provided Kanye with an unsupported argument!");
+            }
+
+            System.exit(0);
+        }
+        
         Random rand = new Random();
 
         String startKey;
