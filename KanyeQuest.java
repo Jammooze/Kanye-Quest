@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class KanyeQuest {
     final static Scanner _scanner = new Scanner(System.in);
+    final static Random _random = new Random();
 
     public static void gameOver(){
         System.out.println("");
@@ -141,6 +142,68 @@ public class KanyeQuest {
         return "";
     }
 
+    public static void displayRPSChoiceDialog(String name , char rpsChoice) {
+        System.out.println("");
+        System.out.println("   +---------------+");
+        System.out.println(String.format("   |  %s threw... |  " , name));
+        
+        if(rpsChoice == 'r') {
+            System.out.println("   |    [ROCK]    |");
+        } else if(rpsChoice == 'p') {
+            System.out.println("   |    [PAPER]    |");
+        } else if(rpsChoice == 's') {
+            System.out.println("   |    [SCISSOR]    |");
+        }
+        
+        System.out.println("   |     __        |");
+        System.out.println("   |    |..|       |");
+        
+        if(rpsChoice == 'r' || rpsChoice == 'p') {
+            System.out.println("   |    /  =o-     |");
+        } else if(rpsChoice == 's') {
+            System.out.println("   |    /  =o<     |");
+        }
+    
+        System.out.println("   +---------------+");
+    }
+
+    public static void displayKanyeAsciiArt() {
+        System.out.println("");
+        System.out.println("   +------------------------------------------------------------+");
+        System.out.println("   |MMMMMMMMMMMMMMMMMMMMWKko:,.......';cdONWMMMMMMMMMMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMMMMMMWXOl;.                'cxKWWWWWMMMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMMMMW0o'          .....        .c0WMMMMMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMMWOc.    ........'''.......     .lKMMMMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMXo. .......'',,,,;;;;;,,''......  'OWMMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMXc  .....''',,;;:::c:::;;,,,''..... .xWMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMNl  .....''',,;:ccccccccc::;,,''..... .kMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMM0'  .....''',,;::ccccc:cc::;;,''...... ;KMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMd. .......'',,;:cccccccccc:::;,'...... .oWMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMWo  ........'',;:loooollclloll:;,'...... ;KMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMWl  .............,:ldxxxddolc;'......  . 'OMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMNc  .....',,,,;;;,,,:lloocc;,''','.... . .kMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMNl......',,''',,;;;,,,,:c;''',,,,'...... .kMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMWd.....','......',',''';c:,..,;'......'...xWMMMMMMMM|");
+        System.out.println("   |MMMMMMMMK:....''''',,,;c:;,,',;:::,''',;;,,'..'...,OMMMMMMMM|");
+        System.out.println("   |MMMMMMMM0:....'',;;:::cllc:,,;;;::;,'';cc:;;;,'...:0MWMMMMMM|");
+        System.out.println("   |MMMMMMMMNo,'...',;:ldddoll:;;;;;clc,,;;:loool:,'..cXMMMMMMMM|");
+        System.out.println("   |MMMMMMMMNdc;..'';:cdxxl:;:;;:;,;clc,''';clddlc;'..lNMMMMMMMM|");
+        System.out.println("   |MMMMMMMMWk:'..'',;:ccc;;;,.....',''....':clc:;,'..dWMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMXo......'',,,,'......',,;,.......,,'... .kMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMNl....'',,''....',;::ccc:,,'... ..'... .kMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMM0,...'',:;..':odkOOO0000Okkdc,...'... ,KMWMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMWd.....';,..,;:clloddxxxolc:,,,....  .dWMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMMNd. ......',;,,,;;:clc::,'..''..   .dNMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMMMNx'     ...'',;;,',,'........    ;OWMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMMMMWKc.    .....,:,.,,'.....     'xNMMMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMMMMMMW0c.     ...',',,,...     .cKWMMMMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMMMMMMMMWXd;.  ........'...   .;kNMMMMMMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMMMMMMMMMMMN0o;..          ..:xNWWMMMMMMMMMMMMMMMM|");
+        System.out.println("   |MMMMMMMMMMMMMMMMMWMMMMMMN0d:'......,:dKWMMMMMMMMMMMMMMMMMMMM|");
+        System.out.println("   +------------------------------------------------------------+");
+        System.out.println("");
+    }
+
     public static void main(String[] args){
         if(args.length != 0) {
             if(args[0].equals("-help")) {
@@ -170,7 +233,6 @@ public class KanyeQuest {
         
         System.out.println("YOU'RE BOOTING INTO KANYE QUEST COMING ON STEAM 2023!");
 
-        Random rand = new Random();
         String startKey;
 
         String nameInput;
@@ -321,44 +383,7 @@ public class KanyeQuest {
         System.out.println("");
  
         nextPrompt();
-
-        System.out.println("   +------------------------------------------------------------+");
-        System.out.println("   |MMMMMMMMMMMMMMMMMMMMWKko:,.......';cdONWMMMMMMMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMMMWXOl;.                'cxKWWWWWMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMW0o'          .....        .c0WMMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMWOc.    ........'''.......     .lKMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMXo. .......'',,,,;;;;;,,''......  'OWMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMXc  .....''',,;;:::c:::;;,,,''..... .xWMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMNl  .....''',,;:ccccccccc::;,,''..... .kMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMM0'  .....''',,;::ccccc:cc::;;,''...... ;KMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMd. .......'',,;:cccccccccc:::;,'...... .oWMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMWo  ........'',;:loooollclloll:;,'...... ;KMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMWl  .............,:ldxxxddolc;'......  . 'OMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMNc  .....',,,,;;;,,,:lloocc;,''','.... . .kMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMNl......',,''',,;;;,,,,:c;''',,,,'...... .kMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMWd.....','......',',''';c:,..,;'......'...xWMMMMMMMM|");
-        System.out.println("   |MMMMMMMMK:....''''',,,;c:;,,',;:::,''',;;,,'..'...,OMMMMMMMM|");
-        System.out.println("   |MMMMMMMM0:....'',;;:::cllc:,,;;;::;,'';cc:;;;,'...:0MWMMMMMM|");
-        System.out.println("   |MMMMMMMMNo,'...',;:ldddoll:;;;;;clc,,;;:loool:,'..cXMMMMMMMM|");
-        System.out.println("   |MMMMMMMMNdc;..'';:cdxxl:;:;;:;,;clc,''';clddlc;'..lNMMMMMMMM|");
-        System.out.println("   |MMMMMMMMWk:'..'',;:ccc;;;,.....',''....':clc:;,'..dWMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMXo......'',,,,'......',,;,.......,,'... .kMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMNl....'',,''....',;::ccc:,,'... ..'... .kMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMM0,...'',:;..':odkOOO0000Okkdc,...'... ,KMWMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMWd.....';,..,;:clloddxxxolc:,,,....  .dWMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMNd. ......',;,,,;;:clc::,'..''..   .dNMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMNx'     ...'',;;,',,'........    ;OWMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMWKc.    .....,:,.,,'.....     'xNMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMMMW0c.     ...',',,,...     .cKWMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMMMMMWXd;.  ........'...   .;kNMMMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMMMMMMMMN0o;..          ..:xNWWMMMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMMMMWMMMMMMN0d:'......,:dKWMMMMMMMMMMMMMMMMMMMM|");
-        System.out.println("   +------------------------------------------------------------+");
-        System.out.println("");
-        System.out.println("> HAHAHA ITS ME KANYE WEST! AND I'M HERE TO");
-        System.out.println("  PUT THE YE BACK IN YEEZY! ");
-        System.out.println("");
-
+        displayKanyeAsciiArt();
         nextPrompt();
 
         System.out.println("   +---------------+");
@@ -537,10 +562,9 @@ public class KanyeQuest {
                 break;
             }
 
-            //Random rand = new Random();
-            int cpuPosition = rand.nextInt(9) + 1;
+            int cpuPosition = _random.nextInt(9) + 1;
             while(playerPositions.contains(cpuPosition) || cpuPositions.contains(cpuPosition)){
-                cpuPosition = rand.nextInt(9) + 1;
+                cpuPosition = _random.nextInt(9) + 1;
             }
             placePiece(tictacBoard, cpuPosition, "cpu");
 
@@ -590,176 +614,72 @@ public class KanyeQuest {
         System.out.println("> PREPARE TO MEET YOUR MAKER " + name.toUpperCase() + "!");
         System.out.println("  AND I DON'T MEAN YOUR MOTHER!\n");
 
-        System.out.print("< THROW [R] ROCK / [P] PAPER / [S] SCISSORS:");
+        ArrayList<Character> rpsOptionsList = new ArrayList<Character>();
+        
+        // Add the rock paper scissor options to the list.
+        rpsOptionsList.add('r');
+        rpsOptionsList.add('p');
+        rpsOptionsList.add('s');
 
-        int rpsOutcome = 0;
-        /*
-        1 = WIN
-        2 = TIE
-        3 = LOSE
-         */
+        // Rock paper scissor game loop
+        while (true) {
+            System.out.print("< THROW [R] ROCK / [P] PAPER / [S] SCISSORS:");
+            char userRPSSelect = _scanner.next().charAt(0);
+            char cpuRPSSelect = rpsOptionsList.get(_random.nextInt(rpsOptionsList.size()));
 
-        char rpsSelect;
-        rpsSelect = _scanner.next().charAt(0);
-
-        int handValue;
-        do{
-            do{
-                if (rpsSelect == 'r'){
-                    System.out.println("");
-                    System.out.println("   +---------------+");
-                    System.out.println("   |  You threw... |");
-                    System.out.println("   |     [ROCK]    |");
-                    System.out.println("   |     __        |");
-                    System.out.println("   |    |..|       |");
-                    System.out.println("   |    /  =o      |");
-                    System.out.println("   +---------------+");
-                    break;
-                } else if (rpsSelect == 'p'){
-                    System.out.println("");
-                    System.out.println("   +---------------+");
-                    System.out.println("   |  You threw... |");
-                    System.out.println("   |    [PAPER]    |");
-                    System.out.println("   |     __        |");
-                    System.out.println("   |    |..|       |");
-                    System.out.println("   |    /  =o-     |");
-                    System.out.println("   +---------------+");
-                    break;
-                } else if (rpsSelect == 's'){
-                    System.out.println("");
-                    System.out.println("   +---------------+");
-                    System.out.println("   |  You threw... |");
-                    System.out.println("   |   [SCISSORS]  |");
-                    System.out.println("   |     __        |");
-                    System.out.println("   |    |..|       |");
-                    System.out.println("   |    /  =o<     |");
-                    System.out.println("   +---------------+");
-                    break;
-                } else {
+            // User will have to pick a rps choice.                                             
+            while (true) {
+                if(!rpsOptionsList.contains(userRPSSelect)) {
                     System.out.println("\n> INVALID INPUT TRY AGAIN!\n");
                     System.out.print("< THROW [R] ROCK / [P] PAPER / [S] SCISSORS:");
-                    rpsSelect = _scanner.next().charAt(0);
+                    userRPSSelect = _scanner.next().charAt(0);
+                    continue;
                 }
-            } while (rpsSelect != 'r' || rpsSelect != 'p' || rpsSelect != 's');
 
-            int cpuHand = rand.nextInt(3) + 1;
-
-            boolean rpsWin;
-
-
-            if (cpuHand == 1){
-                System.out.println("");
-                System.out.println("   +---------------+");
-                System.out.println("   |   Ye threw... |");
-                System.out.println("   |     [ROCK]    |");
-                System.out.println("   +---------------+\n");
-                if (rpsSelect == 'r'){
-                    rpsOutcome = 2;
-                    System.out.println("> [TIE]");
-                } else if (rpsSelect == 'p') {
-                    rpsOutcome = 1;
-                    System.out.println("> [PLAYER WIN]");
-                    rpsWin = true;
-                } else {
-                    rpsOutcome = 3;
-                    System.out.println("> [KANYE WIN]");
-                    rpsWin = false;
-                }
-            } else if (cpuHand == 2){
-                System.out.println("");
-                System.out.println("   +---------------+");
-                System.out.println("   |   Ye threw... |");
-                System.out.println("   |    [PAPER]    |");
-                System.out.println("   +---------------+\n");
-                if (rpsSelect == 'r'){
-                    rpsOutcome = 3;
-                    System.out.println("> [KANYE WIN]");
-                    rpsWin = false;
-                } else if (rpsSelect == 'p') {
-                    rpsOutcome = 2;
-                    System.out.println("> [TIE]");
-                } else {
-                    rpsOutcome = 1;
-                    System.out.println("> [PLAYER WIN]");
-                    rpsWin = true;
-                }
-            } else if (cpuHand == 3){
-                System.out.println("");
-                System.out.println("   +---------------+");
-                System.out.println("   |   Ye threw... |");
-                System.out.println("   |   [SCISSORS]  |");
-                System.out.println("   +---------------+\n");
-                if (rpsSelect == 'r'){
-                    rpsOutcome = 1;
-                    System.out.println("> [PLAYER WIN]");
-                    rpsWin = true;
-                } else if (rpsSelect == 'p') {
-                    rpsOutcome = 3;
-                    System.out.println("> [KANYE WIN]");
-                    rpsWin = false;
-                } else {
-                    rpsOutcome = 2;
-                    System.out.println("> [TIE]");
-                }
+                displayRPSChoiceDialog(name, userRPSSelect);
+                break;
             }
-        } while (rpsOutcome == 2);
+            
+            // Display what the Ye have chosen.
+            displayRPSChoiceDialog("Kanye", cpuRPSSelect);
 
-        System.out.println("");
-        System.out.println("   +------------------------------------------------------------+");
-        System.out.println("   |MMMMMMMMMMMMMMMMMMMMWKko:,.......';cdONWMMMMMMMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMMMWXOl;.                'cxKWWWWWMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMW0o'          .....        .c0WMMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMWOc.    ........'''.......     .lKMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMXo. .......'',,,,;;;;;,,''......  'OWMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMXc  .....''',,;;:::c:::;;,,,''..... .xWMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMNl  .....''',,;:ccccccccc::;,,''..... .kMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMM0'  .....''',,;::ccccc:cc::;;,''...... ;KMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMd. .......'',,;:cccccccccc:::;,'...... .oWMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMWo  ........'',;:loooollclloll:;,'...... ;KMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMWl  .............,:ldxxxddolc;'......  . 'OMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMNc  .....',,,,;;;,,,:lloocc;,''','.... . .kMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMNl......',,''',,;;;,,,,:c;''',,,,'...... .kMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMWd.....','......',',''';c:,..,;'......'...xWMMMMMMMM|");
-        System.out.println("   |MMMMMMMMK:....''''',,,;c:;,,',;:::,''',;;,,'..'...,OMMMMMMMM|");
-        System.out.println("   |MMMMMMMM0:....'',;;:::cllc:,,;;;::;,'';cc:;;;,'...:0MWMMMMMM|");
-        System.out.println("   |MMMMMMMMNo,'...',;:ldddoll:;;;;;clc,,;;:loool:,'..cXMMMMMMMM|");
-        System.out.println("   |MMMMMMMMNdc;..'';:cdxxl:;:;;:;,;clc,''';clddlc;'..lNMMMMMMMM|");
-        System.out.println("   |MMMMMMMMWk:'..'',;:ccc;;;,.....',''....':clc:;,'..dWMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMXo......'',,,,'......',,;,.......,,'... .kMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMNl....'',,''....',;::ccc:,,'... ..'... .kMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMM0,...'',:;..':odkOOO0000Okkdc,...'... ,KMWMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMWd.....';,..,;:clloddxxxolc:,,,....  .dWMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMNd. ......',;,,,;;:clc::,'..''..   .dNMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMNx'     ...'',;;,',,'........    ;OWMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMWKc.    .....,:,.,,'.....     'xNMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMMMW0c.     ...',',,,...     .cKWMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMMMMMWXd;.  ........'...   .;kNMMMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMMMMMMMMN0o;..          ..:xNWWMMMMMMMMMMMMMMMM|");
-        System.out.println("   |MMMMMMMMMMMMMMMMMWMMMMMMN0d:'......,:dKWMMMMMMMMMMMMMMMMMMMM|");
-        System.out.println("   +------------------------------------------------------------+");
-        System.out.println("");
+            // First condition will check for user win conditions
+            if((userRPSSelect == 'r' && cpuRPSSelect == 's') || (userRPSSelect == 'p' && cpuRPSSelect == 'r') || (userRPSSelect == 's' && cpuRPSSelect == 'p') ) {
+                System.out.println("     [YOU WIN]     ");
+                System.out.println("> HA HA HA! OUTSMARTED BY THE ONE AND ONLY YE!");
+                System.out.println("  WITH THIS VICTORY, I SHALL REVIVE MY YEEZY CONTRACT");
+                System.out.println("  AND RULE THE WORLD UNDER YE!\n");
 
-        if (rpsOutcome == 1){
-            System.out.println("> DANG IT! YOU DEFEATED ME! MY EMPIRE OF YEEZY");
-            System.out.println("  ALL GONE! I SHALL RETURN ONE DAY FOR MY REVENGE!");
-            System.out.println("  TILL NEXT TIME WE MEET " + name.toUpperCase() + "!");
-        } else if (rpsOutcome == 3){
-            System.out.println("> HA HA HA! OUTSMARTED BY THE ONE AND ONLY YE!");
-            System.out.println("  WITH THIS VICTORY, I SHALL REVIVE MY YEEZY CONTRACT");
-            System.out.println("  AND RULE THE WORLD UNDER YE!\n");
-            gameOver();
+                displayKanyeAsciiArt();
+
+                System.out.println("");
+                System.out.println("   +---------------------+");
+                System.out.println("   |   CONGRATULATIONS!  |");
+                System.out.println("   | YOU DEFEATED KANYE! |");
+                System.out.println("   |          __         |");
+                System.out.println("   |        o|..|o       |");
+                System.out.println("   |         \\  /        |");
+                System.out.println("   | THE WORLD IS NOW AT |");
+                System.out.println("   |        PEACE!       |");
+                System.out.println("   +---------------------+\n");
+
+                // Break out of the game loop.
+                break;
+            } else if (userRPSSelect == cpuRPSSelect) {
+                System.out.println("     [TIE]     ");
+                System.out.println("YOU WILL HAVE TO FACE THE YE IN A ROCK PAPER SCISSOR CHALLENGE AGAIN.");
+
+                // Start the game loop over again.
+                continue;
+            } else {
+                System.out.println("     [YOU LOSE]     ");
+                System.out.println("> HA HA HA! OUTSMARTED BY THE ONE AND ONLY YE!");
+                System.out.println("  WITH THIS VICTORY, I SHALL REVIVE MY YEEZY CONTRACT");
+                System.out.println("  AND RULE THE WORLD UNDER YE!\n");
+                gameOver();
+            }
         }
 
-        System.out.println("");
-        System.out.println("   +---------------------+");
-        System.out.println("   |   CONGRATULATIONS!  |");
-        System.out.println("   | YOU DEFEATED KANYE! |");
-        System.out.println("   |          __         |");
-        System.out.println("   |        o|..|o       |");
-        System.out.println("   |         \\  /        |");
-        System.out.println("   | THE WORLD IS NOW AT |");
-        System.out.println("   |        PEACE!       |");
-        System.out.println("   +---------------------+\n");
         System.out.println("> THANK YOU FOR PLAYING KANYE QUEST...");
         System.out.println("  A CS-2011 PROJECT BY: - CHAN GAVIN");
         System.out.println("                        - NGUYEN JAMES");
